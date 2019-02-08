@@ -149,5 +149,5 @@ target.health -= damage + addMods();
 - Reset: Your user should have a way to start the game over without having to refresh the page.
 - Limit items being used: How could you only allow so many items to be used at a time to prevent users stacking up 100 modifiers
 - Randomize damage: Maybe each hit does a damage within a certain range instead of a static number?
-- Limit each items number of uses: Should each shield be permenant or does it break after so many hits?
+- Limit each items number of uses: Should each shield be permanent or does it break after so many hits?
 - GUI for what items are active: How does the user know what modifiers are active and their total affect?
