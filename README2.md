@@ -49,7 +49,7 @@ Now our SlapGame may not be as advanced as Street Fighter but we should still st
 
 ### Constructing our Targets
 
-Having our values for health, name, and hits is not the best way to contain our data, what happens when we switch characters? Lets fix that.
+Having our values for health, name, and hits is not the best way to contain our data, what happens when we switch characters? Let's fix that.
 
 #### Warning Refactoring will break your code.... But its okay. Don't be afraid to break things.
 
@@ -101,7 +101,7 @@ var ryu = {
   items:[]
 ``` 
 
-2. Keep in mind that the \[items] object that is global, is completly different than the \[items] array on the target.
+2. Keep in mind that the \[items] object that is global, is completely different than the \[items] array on the target.
 3. Now write a function (something like giveFire()) that will push an item from the global items object into the items array on the target.
  
 ### Step 5 - REDUCE THE DAMAGE!... almost
