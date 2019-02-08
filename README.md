@@ -11,7 +11,7 @@ Students will use javascript in order to interact with the DOM to create a dynam
 
 ### Step 2 - HTML - Create page layout and Slap button
 
-1. Link Bootstrap game.js and game.css to index.html.
+1. Link Bootstrap, game.js and game.css to index.html.
 2. Add an image to the body with a width of 200px this is your "target"
 3. Add a button to the footer with the text "Slap"
 
