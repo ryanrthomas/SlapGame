@@ -21,16 +21,23 @@ let items = {
     thunder: { name: 'PK Thunder', modifier: 7, description: 'It shocks the target!' }
 }
 
-// Global variable for health
-var health = 100;
-var name = "Big Bull";
-var hits = 0;
+modifierActivated = false;
 
 // Slap function
 function slap() {
     if (target.health > 0) {
-        target.health -= 1 + addMods();
+        let damage = 1 + addMods();
+        target.health -= damage;
         target.hits++;
+    }
+    if (document.getElementById("modifier").innerText == `${items.flash.name} active!`) {
+        document.getElementById("message").innerText = `Flash Slap! ${1 + addMods()} HP of damage!`;
+    } else if (document.getElementById("modifier").innerText == `${items.freeze.name} active!`) {
+        document.getElementById("message").innerText = `Freeze Slap! ${1 + addMods()} HP of damage!`;
+    } else if (document.getElementById("modifier").innerText == `${items.thunder.name} active!`) {
+        document.getElementById("message").innerText = `Thunder Slap! ${1 + addMods()} HP of damage!`;
+    } else {
+        document.getElementById("message").innerText = `Slap! ${1 + addMods()} HP of damage!`;
     }
     update();
 }
@@ -38,8 +45,18 @@ function slap() {
 // Punch function
 function punch() {
     if (target.health > 0) {
-        target.health -= 5 + addMods();
+        let damage = 5 + addMods();
+        target.health -= damage;
         target.hits++;
+    }
+    if (document.getElementById("modifier").innerText == `${items.flash.name} active!`) {
+        document.getElementById("message").innerText = `Flash Punch! ${5 + addMods()} HP of damage!`;
+    } else if (document.getElementById("modifier").innerText == `${items.freeze.name} active!`) {
+        document.getElementById("message").innerText = `Freeze Punch! ${5 + addMods()} HP of damage!`;
+    } else if (document.getElementById("modifier").innerText == `${items.thunder.name} active!`) {
+        document.getElementById("message").innerText = `Thunder Punch! ${5 + addMods()} HP of damage!`;
+    } else {
+        document.getElementById("message").innerText = `Punch! ${5 + addMods()} HP of damage!`;
     }
     update();
 }
@@ -47,28 +64,59 @@ function punch() {
 // Kick function
 function kick() {
     if (target.health > 0) {
-        target.health -= 10 + addMods();
+        let damage = 10 + addMods();
+        target.health -= damage;
         target.hits++;
+    }
+    if (document.getElementById("modifier").innerText == `${items.flash.name} active!`) {
+        document.getElementById("message").innerText = `Flash Kick! ${10 + addMods()} HP of damage!`;
+    } else if (document.getElementById("modifier").innerText == `${items.freeze.name} active!`) {
+        document.getElementById("message").innerText = `Freeze Kick! ${10 + addMods()} HP of damage!`;
+    } else if (document.getElementById("modifier").innerText == `${items.thunder.name} active!`) {
+        document.getElementById("message").innerText = `Thunder Kick! ${10 + addMods()} HP of damage!`;
+    } else {
+        document.getElementById("message").innerText = `Kick! ${10 + addMods()} HP of damage!`;
     }
     update();
 }
 
-function addFlash() {
-    target.items.push(items.flash);
-    document.getElementById("modifier").innerText = `${items.flash.name} active!`;
-    update();
 
+function addFlash() {
+    if (modifierActivated == false) {
+        target.items.push(items.flash);
+        document.getElementById("modifier").innerText = `${items.flash.name} active!`;
+        modifierActivated = true;
+    } else {
+        target.items.pop(target.items.flash);
+        document.getElementById("modifier").innerText = `No Modifier Active`;
+        modifierActivated = false;
+    }
+    update();
 }
 
 function addFreeze() {
-    target.items.push(items.freeze);
-    document.getElementById("modifier").innerText = `${items.freeze.name} active!`;
-     update();
+    if (modifierActivated == false) {
+        target.items.push(items.freeze);
+        document.getElementById("modifier").innerText = `${items.freeze.name} active!`;
+        modifierActivated = true;
+    } else {
+        target.items.pop(target.items.freeze);
+        document.getElementById("modifier").innerText = `No Modifier Active`;
+        modifierActivated = false;
+    }
+    update();
 }
 
 function addThunder() {
-    target.items.push(items.thunder);
-    document.getElementById("modifier").innerText = `${items.thunder.name} active!`;
+    if (modifierActivated == false) {
+        target.items.push(items.thunder);
+        document.getElementById("modifier").innerText = `${items.thunder.name} active!`;
+        modifierActivated = true;
+    } else {
+        target.items.pop(target.items.thunder);
+        document.getElementById("modifier").innerText = `No Modifier Active`;
+        modifierActivated = false;
+    }
     update();
 }
 
@@ -88,6 +136,7 @@ function update() {
         document.getElementById("health").innerText = `${target.health}`;
     }
     document.getElementById("hits").innerText = `${target.hits}`;
+    document.getElementById("")
 }
 
 function reset() {
@@ -97,7 +146,9 @@ function reset() {
     target.items.pop(target.items.flash);
     target.items.pop(target.items.freeze);
     target.items.pop(target.items.thunder);
+    document.getElementById("message").innerText = ` `;
     document.getElementById("modifier").innerText = `No Modifier Active`;
+    modifierActivated = false;
     update();
 }
 
