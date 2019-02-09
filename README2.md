@@ -142,7 +142,7 @@ target.health -= damage + addMods();
  	- Items affect the current health or the damage rate
 
 ### Bonus Challenges 
-- Draw items to screen dynamically; can you write a function that will itterate over your items list and create a button for each one?
+- Draw items to screen dynamically; can you write a function that will iterate over your items list and create a button for each one?
 - K.O. Notification: Make a notification apear on the screen once the target's health reaches 0
 - Damage Indicator: Most games have not only a number but a health bar, how could you create one for your target (checkout Bootstraps Progress Bars)
 - Hit Animation: How could you make something happen everytime you clicked to hit your target? A pop up animation or maybe the picture moves?
@@ -150,4 +150,4 @@ target.health -= damage + addMods();
 - Limit items being used: How could you only allow so many items to be used at a time to prevent users stacking up 100 modifiers
 - Randomize damage: Maybe each hit does a damage within a certain range instead of a static number?
 - Limit each items number of uses: Should each shield be permanent or does it break after so many hits?
-- GUI for what items are active: How does the user know what modifiers are active and their total affect?
+- GUI for what items are active: How does the user know what modifiers are active and their total effect?

@@ -55,14 +55,21 @@ function kick() {
 
 function addFlash() {
     target.items.push(items.flash);
+    document.getElementById("modifier").innerText = `${items.flash.name} active!`;
+    update();
+
 }
 
 function addFreeze() {
     target.items.push(items.freeze);
+    document.getElementById("modifier").innerText = `${items.freeze.name} active!`;
+     update();
 }
 
 function addThunder() {
     target.items.push(items.thunder);
+    document.getElementById("modifier").innerText = `${items.thunder.name} active!`;
+    update();
 }
 
 function addMods() {
@@ -90,6 +97,7 @@ function reset() {
     target.items.pop(target.items.flash);
     target.items.pop(target.items.freeze);
     target.items.pop(target.items.thunder);
+    document.getElementById("modifier").innerText = `No Modifier Active`;
     update();
 }
 
