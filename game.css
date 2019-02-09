@@ -1,3 +1,7 @@
+@font-face {
+    font-family: "Apple Kid";
+    src: url("Apple-Kid.ttf");
+}
 body {
     margin-top: 10px;
     background-image: linear-gradient(to right, rgb(34, 34, 65), rgb(103, 103, 134), rgb(34, 34, 65));
@@ -14,6 +18,7 @@ div {
 
 span {
     text-shadow: 0 2px 5px black;
-    font-size: 24px;
-    font-family: 'Press Start 2P', cursive;
+    font-size: 36px;
+    font-family: "Apple Kid";
 }
+

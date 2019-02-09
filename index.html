@@ -7,7 +7,7 @@
 	<meta http-equiv="X-UA-Compatible" content="ie=edge">
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css"
 		integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
-	<link href="https://fonts.googleapis.com/css?family=Press+Start+2P" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=VT323" rel="stylesheet">
 	<link rel="stylesheet" href="game.css">
 	<title>Slap Game</title>
 </head>
@@ -15,10 +15,10 @@
 <body class="container">
 	<header class="row">
 		<div class="col-12 text-white">
-			<span>NAME: <span id="name">--</span></span><br>
+			<span class="title">Name: <span class="title" id="name">--</span></span><br>
 			<span>HP: <span id="health">--</span></span><br>
-			<span>HITS: <span id="hits">--</span></span><br>
-			<span><span id="modifier">No Modifier Active</span></span>
+			<span>Hits: <span id="hits">--</span></span><br>
+			<span><span id="modifier">(No modifier active)</span></span>
 
 		</div>
 	</header>
@@ -34,12 +34,10 @@
 			<img src="kick.png" onclick="kick()">
 		</div>
 		<div class="col-12">
-			<button onclick="addFlash()">Use PK Flash</button>
-			<button onclick="addFreeze()">Use PK Freeze</button>
-			<button onclick="addThunder()">Use PK Thunder</button>
-		</div>
-		<div class="col-12">
-			<button onclick="reset()">Reset!</button><br>
+			<img src="flash.png" onclick="addFlash()">
+			<img src="freeze.png" onclick="addFreeze()">
+			<img src="thunder.png" onclick="addThunder()">
+			<img src="reset.png" onclick="reset()">
 		</div>
 		<div class="col-12 text-white">
 			<span id="message"></span>

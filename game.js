@@ -88,7 +88,7 @@ function addFlash() {
         modifierActivated = true;
     } else {
         target.items.pop(target.items.flash);
-        document.getElementById("modifier").innerText = `No Modifier Active`;
+        document.getElementById("modifier").innerText = `((No modifier active))`;
         modifierActivated = false;
     }
     update();
@@ -101,7 +101,7 @@ function addFreeze() {
         modifierActivated = true;
     } else {
         target.items.pop(target.items.freeze);
-        document.getElementById("modifier").innerText = `No Modifier Active`;
+        document.getElementById("modifier").innerText = `(No modifier active)`;
         modifierActivated = false;
     }
     update();
@@ -114,7 +114,7 @@ function addThunder() {
         modifierActivated = true;
     } else {
         target.items.pop(target.items.thunder);
-        document.getElementById("modifier").innerText = `No Modifier Active`;
+        document.getElementById("modifier").innerText = `(No modifier active)`;
         modifierActivated = false;
     }
     update();
@@ -147,7 +147,7 @@ function reset() {
     target.items.pop(target.items.freeze);
     target.items.pop(target.items.thunder);
     document.getElementById("message").innerText = ` `;
-    document.getElementById("modifier").innerText = `No Modifier Active`;
+    document.getElementById("modifier").innerText = `(No modifier active)`;
     modifierActivated = false;
     update();
 }
