@@ -16,9 +16,9 @@ let target = {
 }
 
 let items = {
-    flash: { name: 'PK Flash', modifier: 3, description: 'It stuns the target!!' },
-    freeze: { name: 'PK Freeze', modifier: 5, description: 'It freezes the target!!' },
-    thunder: { name: 'PK Thunder', modifier: 7, description: 'It shocks the target!' }
+    flash: { name: 'Flash', modifier: 3, description: 'It stuns the target!!' },
+    freeze: { name: 'Freeze', modifier: 5, description: 'It freezes the target!!' },
+    thunder: { name: 'Thunder', modifier: 7, description: 'It shocks the target!' }
 }
 
 modifierActivated = false;
@@ -88,7 +88,7 @@ function addFlash() {
         modifierActivated = true;
     } else {
         target.items.pop(target.items.flash);
-        document.getElementById("modifier").innerText = `((No modifier active))`;
+        document.getElementById("modifier").innerText = `(No modifier active)`;
         modifierActivated = false;
     }
     update();
