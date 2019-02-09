@@ -83,6 +83,7 @@ function kick() {
 
 function addFlash() {
     if (modifierActivated == false) {
+        playFlash();
         target.items.push(items.flash);
         document.getElementById("modifier").innerText = `${items.flash.name} active!`;
         modifierActivated = true;
@@ -96,6 +97,7 @@ function addFlash() {
 
 function addFreeze() {
     if (modifierActivated == false) {
+        playFreeze();
         target.items.push(items.freeze);
         document.getElementById("modifier").innerText = `${items.freeze.name} active!`;
         modifierActivated = true;
@@ -109,6 +111,7 @@ function addFreeze() {
 
 function addThunder() {
     if (modifierActivated == false) {
+        playThunder();
         target.items.push(items.thunder);
         document.getElementById("modifier").innerText = `${items.thunder.name} active!`;
         modifierActivated = true;
@@ -140,6 +143,7 @@ function update() {
 }
 
 function reset() {
+    playReset();
     target.health = 100;
     target.name = "Big Bull";
     target.hits = 0;
@@ -150,6 +154,36 @@ function reset() {
     document.getElementById("modifier").innerText = `(No modifier active)`;
     modifierActivated = false;
     update();
+}
+
+// Audio playback functions
+function playSlap() {
+    var audio = document.getElementById("slap");
+    audio.play();
+}
+function playPunch() {
+    var audio = document.getElementById("punch");
+    audio.play();
+}
+function playKick() {
+    var audio = document.getElementById("kick");
+    audio.play();
+}
+function playFlash() {
+    var audio = document.getElementById("flash");
+    audio.play();
+}
+function playFreeze() {
+    var audio = document.getElementById("freeze");
+    audio.play();
+}
+function playThunder() {
+    var audio = document.getElementById("thunder");
+    audio.play();
+}
+function playReset() {
+    var audio = document.getElementById("reset");
+    audio.play();
 }
 
 update();

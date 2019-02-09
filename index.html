@@ -29,9 +29,9 @@
 	</div>
 	<footer class="row">
 		<div class="col-12">
-			<img src="slap.png" onclick="slap()">
-			<img src="punch.png" onclick="punch()">
-			<img src="kick.png" onclick="kick()">
+			<img src="slap.png" onclick="slap(), playSlap()">
+			<img src="punch.png" onclick="punch(), playPunch()">
+			<img src="kick.png" onclick="kick(), playKick()">
 		</div>
 		<div class="col-12">
 			<img src="flash.png" onclick="addFlash()">
@@ -40,7 +40,31 @@
 			<img src="reset.png" onclick="reset()">
 		</div>
 		<div class="col-12 text-white">
-			<span id="message"></span>
+			<span id="message"></span><br>
+			<audio autoplay controls loop>
+				<source src="music.mp3" type="audio/mp3">
+			</audio>
+			<audio id="slap">
+				<source src="slap.wav" type="audio/wav">
+			</audio>
+			<audio id="punch">
+				<source src="punch.wav" type="audio/wav">
+			</audio>
+			<audio id="kick">
+				<source src="kick.wav" type="audio/wav">
+			</audio>
+			<audio id="flash">
+				<source src="flash.wav" type="audio/wav">
+			</audio>
+			<audio id="freeze">
+				<source src="freeze.wav" type="audio/wav">
+			</audio>
+			<audio id="thunder">
+				<source src="thunder.wav" type="audio/wav">
+			</audio>
+			<audio id="reset">
+				<source src="reset.wav" type="audio/wav">
+			</audio>
 		</div>
 	</footer>
 
