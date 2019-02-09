@@ -6,14 +6,10 @@ body {
 img {
     margin-top: 10px;
     margin-bottom: 10px;
-    border-style: solid;
-    border-width: thin;
-    border-color: black;
 }
 
 div {
     text-align: center;
-
 }
 
 span {
