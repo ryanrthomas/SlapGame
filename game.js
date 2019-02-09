@@ -3,7 +3,7 @@ console.log("Start");
 // Target object
 let player = {
     name: "Player",
-    health: 2,
+    health: 25,
     hits: 0,
     items: []
 }
@@ -87,6 +87,9 @@ function reset() {
     target.health = 100;
     target.name = "Big Bull";
     target.hits = 0;
+    target.items.pop(target.items.flash);
+    target.items.pop(target.items.freeze);
+    target.items.pop(target.items.thunder);
     update();
 }
 

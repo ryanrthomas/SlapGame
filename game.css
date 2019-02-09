@@ -1,6 +1,6 @@
 body {
-    background-color: rgb(213, 213, 255);
-    align-content: center;
+    margin-top: 10px;
+    background-color: rgb(103, 103, 134);
 }
 
 img {
@@ -9,4 +9,15 @@ img {
     border-style: solid;
     border-width: thin;
     border-color: black;
+}
+
+div {
+    text-align: center;
+
+}
+
+span {
+    text-shadow: 0 2px 5px black;
+    font-size: 24px;
+    font-family: 'Press Start 2P', cursive;
 }
