@@ -21,106 +21,122 @@ let items = {
     thunder: { name: 'Thunder', modifier: 7, description: 'It shocks the target!' }
 }
 
+enemyDefeated = false;
 modifierActivated = false;
 document.getElementById("message").innerText = `@ You encountered the ${target.name}. `;
 
 // Slap function
 function slap() {
-    if (target.health > 0) {
-        let damage = 1 + addMods();
-        target.health -= damage;
-        target.hits++;
+    if (enemyDefeated == false) {
+        if (target.health > 0) {
+            playSlap();
+            let damage = 1 + addMods();
+            target.health -= damage;
+            target.hits++;
+        }
+        if (document.getElementById("modifier").innerText == `${items.flash.name} active!`) {
+            document.getElementById("message").innerText = `@ Flash Slap! ${1 + addMods()} HP of damage to the ${target.name}!`;
+        } else if (document.getElementById("modifier").innerText == `${items.freeze.name} active!`) {
+            document.getElementById("message").innerText = `@ Freeze Slap! ${1 + addMods()} HP of damage to the ${target.name}!`;
+        } else if (document.getElementById("modifier").innerText == `${items.thunder.name} active!`) {
+            document.getElementById("message").innerText = `@ Thunder Slap! ${1 + addMods()} HP of damage to the ${target.name}!`;
+        } else {
+            document.getElementById("message").innerText = `@ Slap! ${1 + addMods()} HP of damage to the ${target.name}!`;
+        }
+        update();
     }
-    if (document.getElementById("modifier").innerText == `${items.flash.name} active!`) {
-        document.getElementById("message").innerText = `@ Flash Slap! ${1 + addMods()} HP of damage to the ${target.name}!`;
-    } else if (document.getElementById("modifier").innerText == `${items.freeze.name} active!`) {
-        document.getElementById("message").innerText = `@ Freeze Slap! ${1 + addMods()} HP of damage to the ${target.name}!`;
-    } else if (document.getElementById("modifier").innerText == `${items.thunder.name} active!`) {
-        document.getElementById("message").innerText = `@ Thunder Slap! ${1 + addMods()} HP of damage to the ${target.name}!`;
-    } else {
-        document.getElementById("message").innerText = `@ Slap! ${1 + addMods()} HP of damage to the ${target.name}!`;
-    }
-    update();
 }
 
 // Punch function
 function punch() {
-    if (target.health > 0) {
-        let damage = 5 + addMods();
-        target.health -= damage;
-        target.hits++;
+    if (enemyDefeated == false) {
+        if (target.health > 0) {
+            playPunch();
+            let damage = 5 + addMods();
+            target.health -= damage;
+            target.hits++;
+        }
+        if (document.getElementById("modifier").innerText == `${items.flash.name} active!`) {
+            document.getElementById("message").innerText = `@ Flash Punch! ${5 + addMods()} HP of damage to the ${target.name}!`;
+        } else if (document.getElementById("modifier").innerText == `${items.freeze.name} active!`) {
+            document.getElementById("message").innerText = `@ Freeze Punch! ${5 + addMods()} HP of damage to the ${target.name}!`;
+        } else if (document.getElementById("modifier").innerText == `${items.thunder.name} active!`) {
+            document.getElementById("message").innerText = `@ Thunder Punch! ${5 + addMods()} HP of damage to the ${target.name}!`;
+        } else {
+            document.getElementById("message").innerText = `@ Punch! ${5 + addMods()} HP of damage to the ${target.name}!`;
+        }
+        update();
     }
-    if (document.getElementById("modifier").innerText == `${items.flash.name} active!`) {
-        document.getElementById("message").innerText = `@ Flash Punch! ${5 + addMods()} HP of damage to the ${target.name}!`;
-    } else if (document.getElementById("modifier").innerText == `${items.freeze.name} active!`) {
-        document.getElementById("message").innerText = `@ Freeze Punch! ${5 + addMods()} HP of damage to the ${target.name}!`;
-    } else if (document.getElementById("modifier").innerText == `${items.thunder.name} active!`) {
-        document.getElementById("message").innerText = `@ Thunder Punch! ${5 + addMods()} HP of damage to the ${target.name}!`;
-    } else {
-        document.getElementById("message").innerText = `@ Punch! ${5 + addMods()} HP of damage to the ${target.name}!`;
-    }
-    update();
 }
 
 // Kick function
 function kick() {
-    if (target.health > 0) {
-        let damage = 10 + addMods();
-        target.health -= damage;
-        target.hits++;
+    if (enemyDefeated == false) {
+        if (target.health > 0) {
+            playKick();
+            let damage = 10 + addMods();
+            target.health -= damage;
+            target.hits++;
+        }
+        if (document.getElementById("modifier").innerText == `${items.flash.name} active!`) {
+            document.getElementById("message").innerText = `@ Flash Kick! ${10 + addMods()} HP of damage to the ${target.name}!`;
+        } else if (document.getElementById("modifier").innerText == `${items.freeze.name} active!`) {
+            document.getElementById("message").innerText = `@ Freeze Kick! ${10 + addMods()} HP of damage to the ${target.name}!`;
+        } else if (document.getElementById("modifier").innerText == `${items.thunder.name} active!`) {
+            document.getElementById("message").innerText = `@ Thunder Kick! ${10 + addMods()} HP of damage to the ${target.name}!`;
+        } else {
+            document.getElementById("message").innerText = `@ Kick! ${10 + addMods()} HP of damage to the ${target.name}!`;
+        }
+        update();
     }
-    if (document.getElementById("modifier").innerText == `${items.flash.name} active!`) {
-        document.getElementById("message").innerText = `@ Flash Kick! ${10 + addMods()} HP of damage to the ${target.name}!`;
-    } else if (document.getElementById("modifier").innerText == `${items.freeze.name} active!`) {
-        document.getElementById("message").innerText = `@ Freeze Kick! ${10 + addMods()} HP of damage to the ${target.name}!`;
-    } else if (document.getElementById("modifier").innerText == `${items.thunder.name} active!`) {
-        document.getElementById("message").innerText = `@ Thunder Kick! ${10 + addMods()} HP of damage to the ${target.name}!`;
-    } else {
-        document.getElementById("message").innerText = `@ Kick! ${10 + addMods()} HP of damage to the ${target.name}!`;
-    }
-    update();
 }
 
 function addFlash() {
-    if (modifierActivated == false) {
-        playFlash();
-        target.items.push(items.flash);
-        document.getElementById("modifier").innerText = `${items.flash.name} active!`;
-        modifierActivated = true;
-    } else {
-        target.items.pop(target.items.flash);
-        document.getElementById("modifier").innerText = `(No modifier active)`;
-        modifierActivated = false;
+    if (enemyDefeated == false) {
+        if (modifierActivated == false) {
+            playFlash();
+            target.items.push(items.flash);
+            document.getElementById("modifier").innerText = `${items.flash.name} active!`;
+            modifierActivated = true;
+        } else {
+            target.items.pop(target.items.flash);
+            document.getElementById("modifier").innerText = `(No modifier active)`;
+            modifierActivated = false;
+        }
+        update();
     }
-    update();
 }
 
 function addFreeze() {
-    if (modifierActivated == false) {
-        playFreeze();
-        target.items.push(items.freeze);
-        document.getElementById("modifier").innerText = `${items.freeze.name} active!`;
-        modifierActivated = true;
-    } else {
-        target.items.pop(target.items.freeze);
-        document.getElementById("modifier").innerText = `(No modifier active)`;
-        modifierActivated = false;
+    if (enemyDefeated == false) {
+        if (modifierActivated == false) {
+            playFreeze();
+            target.items.push(items.freeze);
+            document.getElementById("modifier").innerText = `${items.freeze.name} active!`;
+            modifierActivated = true;
+        } else {
+            target.items.pop(target.items.freeze);
+            document.getElementById("modifier").innerText = `(No modifier active)`;
+            modifierActivated = false;
+        }
+        update();
     }
-    update();
 }
 
 function addThunder() {
-    if (modifierActivated == false) {
-        playThunder();
-        target.items.push(items.thunder);
-        document.getElementById("modifier").innerText = `${items.thunder.name} active!`;
-        modifierActivated = true;
-    } else {
-        target.items.pop(target.items.thunder);
-        document.getElementById("modifier").innerText = `(No modifier active)`;
-        modifierActivated = false;
+    if (enemyDefeated == false) {
+        if (modifierActivated == false) {
+            playThunder();
+            target.items.push(items.thunder);
+            document.getElementById("modifier").innerText = `${items.thunder.name} active!`;
+            modifierActivated = true;
+        } else {
+            target.items.pop(target.items.thunder);
+            document.getElementById("modifier").innerText = `(No modifier active)`;
+            modifierActivated = false;
+        }
+        update();
     }
-    update();
 }
 
 function addMods() {
@@ -134,6 +150,7 @@ function addMods() {
 function update() {
     document.getElementById("name").innerText = `${target.name}`;
     if (target.health <= 0) {
+        enemyDefeated = true;
         document.getElementById("message").innerText = `@ The ${target.name} became tame! You won!`
     } else {
         document.getElementById("health").innerText = `${target.health}`;
@@ -153,6 +170,7 @@ function reset() {
     document.getElementById("message").innerText = `@ You encountered the ${target.name}.`;
     document.getElementById("modifier").innerText = `(No special active)`;
     modifierActivated = false;
+    enemyDefeated = false;
     update();
 }
 
