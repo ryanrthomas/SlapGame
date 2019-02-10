@@ -204,10 +204,6 @@ function playReset() {
     audio.play();
 }
 
-// function shakeImage {
-
-// }
-
 update();
 
 console.log("Finish");
