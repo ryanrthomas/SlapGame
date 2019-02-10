@@ -22,6 +22,7 @@ let items = {
 }
 
 modifierActivated = false;
+document.getElementById("message").innerText = `@ You encountered the ${target.name}. `;
 
 // Slap function
 function slap() {
@@ -31,13 +32,13 @@ function slap() {
         target.hits++;
     }
     if (document.getElementById("modifier").innerText == `${items.flash.name} active!`) {
-        document.getElementById("message").innerText = `Flash Slap! ${1 + addMods()} HP of damage!`;
+        document.getElementById("message").innerText = `@ Flash Slap! ${1 + addMods()} HP of damage to the ${target.name}!`;
     } else if (document.getElementById("modifier").innerText == `${items.freeze.name} active!`) {
-        document.getElementById("message").innerText = `Freeze Slap! ${1 + addMods()} HP of damage!`;
+        document.getElementById("message").innerText = `@ Freeze Slap! ${1 + addMods()} HP of damage to the ${target.name}!`;
     } else if (document.getElementById("modifier").innerText == `${items.thunder.name} active!`) {
-        document.getElementById("message").innerText = `Thunder Slap! ${1 + addMods()} HP of damage!`;
+        document.getElementById("message").innerText = `@ Thunder Slap! ${1 + addMods()} HP of damage to the ${target.name}!`;
     } else {
-        document.getElementById("message").innerText = `Slap! ${1 + addMods()} HP of damage!`;
+        document.getElementById("message").innerText = `@ Slap! ${1 + addMods()} HP of damage to the ${target.name}!`;
     }
     update();
 }
@@ -50,13 +51,13 @@ function punch() {
         target.hits++;
     }
     if (document.getElementById("modifier").innerText == `${items.flash.name} active!`) {
-        document.getElementById("message").innerText = `Flash Punch! ${5 + addMods()} HP of damage!`;
+        document.getElementById("message").innerText = `@ Flash Punch! ${5 + addMods()} HP of damage to the ${target.name}!`;
     } else if (document.getElementById("modifier").innerText == `${items.freeze.name} active!`) {
-        document.getElementById("message").innerText = `Freeze Punch! ${5 + addMods()} HP of damage!`;
+        document.getElementById("message").innerText = `@ Freeze Punch! ${5 + addMods()} HP of damage to the ${target.name}!`;
     } else if (document.getElementById("modifier").innerText == `${items.thunder.name} active!`) {
-        document.getElementById("message").innerText = `Thunder Punch! ${5 + addMods()} HP of damage!`;
+        document.getElementById("message").innerText = `@ Thunder Punch! ${5 + addMods()} HP of damage to the ${target.name}!`;
     } else {
-        document.getElementById("message").innerText = `Punch! ${5 + addMods()} HP of damage!`;
+        document.getElementById("message").innerText = `@ Punch! ${5 + addMods()} HP of damage to the ${target.name}!`;
     }
     update();
 }
@@ -69,17 +70,16 @@ function kick() {
         target.hits++;
     }
     if (document.getElementById("modifier").innerText == `${items.flash.name} active!`) {
-        document.getElementById("message").innerText = `Flash Kick! ${10 + addMods()} HP of damage!`;
+        document.getElementById("message").innerText = `@ Flash Kick! ${10 + addMods()} HP of damage to the ${target.name}!`;
     } else if (document.getElementById("modifier").innerText == `${items.freeze.name} active!`) {
-        document.getElementById("message").innerText = `Freeze Kick! ${10 + addMods()} HP of damage!`;
+        document.getElementById("message").innerText = `@ Freeze Kick! ${10 + addMods()} HP of damage to the ${target.name}!`;
     } else if (document.getElementById("modifier").innerText == `${items.thunder.name} active!`) {
-        document.getElementById("message").innerText = `Thunder Kick! ${10 + addMods()} HP of damage!`;
+        document.getElementById("message").innerText = `@ Thunder Kick! ${10 + addMods()} HP of damage to the ${target.name}!`;
     } else {
-        document.getElementById("message").innerText = `Kick! ${10 + addMods()} HP of damage!`;
+        document.getElementById("message").innerText = `@ Kick! ${10 + addMods()} HP of damage to the ${target.name}!`;
     }
     update();
 }
-
 
 function addFlash() {
     if (modifierActivated == false) {
@@ -134,7 +134,7 @@ function addMods() {
 function update() {
     document.getElementById("name").innerText = `${target.name}`;
     if (target.health <= 0) {
-        document.getElementById("health").innerText = `The ${target.name} became tame! You won!`
+        document.getElementById("message").innerText = `@ The ${target.name} became tame! You won!`
     } else {
         document.getElementById("health").innerText = `${target.health}`;
     }
@@ -150,8 +150,8 @@ function reset() {
     target.items.pop(target.items.flash);
     target.items.pop(target.items.freeze);
     target.items.pop(target.items.thunder);
-    document.getElementById("message").innerText = ` `;
-    document.getElementById("modifier").innerText = `(No modifier active)`;
+    document.getElementById("message").innerText = `@ You encountered the ${target.name}.`;
+    document.getElementById("modifier").innerText = `(No special active)`;
     modifierActivated = false;
     update();
 }
@@ -185,6 +185,10 @@ function playReset() {
     var audio = document.getElementById("reset");
     audio.play();
 }
+
+// function shakeImage {
+
+// }
 
 update();
 

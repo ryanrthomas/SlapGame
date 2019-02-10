@@ -22,3 +22,24 @@ span {
     font-family: "Apple Kid";
 }
 
+nav, .player-box, .cpu-box {
+    background-color: black;
+    border-radius: 10px;
+    border-color: silver;
+    border-style: solid;
+    text-align: left;
+    color: white;
+}
+
+audio {
+    padding-top: 10px;
+}
+
+#message {
+    padding-left: 10px;
+}
+
+.player-box, .cpu-box {
+    margin-bottom: 10px;
+    padding-left: 10px;
+}

@@ -14,12 +14,17 @@
 
 <body class="container">
 	<header class="row">
-		<div class="col-12 text-white">
+		<div class="player-box col-6 text-white">
 			<span class="title">Name: <span class="title" id="name">--</span></span><br>
 			<span>HP: <span id="health">--</span></span><br>
 			<span>Hits: <span id="hits">--</span></span><br>
-			<span><span id="modifier">(No modifier active)</span></span>
-
+			<span><span id="modifier">(No special active)</span></span>
+		</div>
+		<div class="cpu-box col-6 text-white">
+			<span class="title">Name: <span class="title" id="name">--</span></span><br>
+			<span>HP: <span id="health">--</span></span><br>
+			<span>Hits: <span id="hits">--</span></span><br>
+			<span><span id="modifier">(No special active)</span></span>
 		</div>
 	</header>
 	<div class="row">
@@ -29,6 +34,9 @@
 	</div>
 	<footer class="row">
 		<div class="col-12">
+			<nav>
+				<span id="message"></span><br>
+			</nav>
 			<img src="slap.png" onclick="slap(), playSlap()">
 			<img src="punch.png" onclick="punch(), playPunch()">
 			<img src="kick.png" onclick="kick(), playKick()">
@@ -40,7 +48,6 @@
 			<img src="reset.png" onclick="reset()">
 		</div>
 		<div class="col-12 text-white">
-			<span id="message"></span><br>
 			<audio autoplay controls loop>
 				<source src="music.mp3" type="audio/mp3">
 			</audio>
