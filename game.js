@@ -22,11 +22,12 @@ let items = {
 }
 
 enemyDefeated = false;
-modifierActivated = false;
+modifierActivated = false; // Start with no special active
 document.getElementById("message").innerText = `@ You encountered the ${target.name}. `;
 
 // Slap function
 function slap() {
+    // If enemy hasn't been defeated yet...
     if (enemyDefeated == false) {
         if (target.health > 0) {
             playSlap();
@@ -49,6 +50,7 @@ function slap() {
 
 // Punch function
 function punch() {
+    // If enemy hasn't been defeated yet...
     if (enemyDefeated == false) {
         if (target.health > 0) {
             playPunch();
@@ -71,6 +73,7 @@ function punch() {
 
 // Kick function
 function kick() {
+    // If enemy hasn't been defeated yet...
     if (enemyDefeated == false) {
         if (target.health > 0) {
             playKick();
@@ -93,14 +96,16 @@ function kick() {
 
 function addFlash() {
     if (enemyDefeated == false) {
-        if (modifierActivated == false) {
-            playFlash();
+        // If there is no special active...
+        if (modifierActivated == false &&) {
+            playFlash(); // Play sound effect
             target.items.push(items.flash);
             document.getElementById("modifier").innerText = `${items.flash.name} active!`;
             modifierActivated = true;
         } else {
+            // Deactivate special
             target.items.pop(target.items.flash);
-            document.getElementById("modifier").innerText = `(No modifier active)`;
+            document.getElementById("modifier").innerText = `(No special active)`;
             modifierActivated = false;
         }
         update();
@@ -109,14 +114,16 @@ function addFlash() {
 
 function addFreeze() {
     if (enemyDefeated == false) {
+        // If there is no special active...
         if (modifierActivated == false) {
-            playFreeze();
+            playFreeze(); // Play sound effect
             target.items.push(items.freeze);
             document.getElementById("modifier").innerText = `${items.freeze.name} active!`;
             modifierActivated = true;
         } else {
+            // Deactivate special
             target.items.pop(target.items.freeze);
-            document.getElementById("modifier").innerText = `(No modifier active)`;
+            document.getElementById("modifier").innerText = `(No special active)`;
             modifierActivated = false;
         }
         update();
@@ -125,14 +132,16 @@ function addFreeze() {
 
 function addThunder() {
     if (enemyDefeated == false) {
+        // If there is no special active...
         if (modifierActivated == false) {
-            playThunder();
+            playThunder(); // Play sound effect
             target.items.push(items.thunder);
             document.getElementById("modifier").innerText = `${items.thunder.name} active!`;
             modifierActivated = true;
         } else {
+            // Deactivate special
             target.items.pop(target.items.thunder);
-            document.getElementById("modifier").innerText = `(No modifier active)`;
+            document.getElementById("modifier").innerText = `(No special active)`;
             modifierActivated = false;
         }
         update();
