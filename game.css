@@ -21,13 +21,18 @@ span {
     font-family: "Apple Kid";
 }
 
-nav, .player-box, .cpu-box {
+nav, .target-box, .cpu-box {
     background-color: black;
     border-radius: 10px;
     border-color: silver;
     border-style: solid;
     text-align: left;
     color: white;
+}
+
+.target-box, .cpu-box {
+    margin-bottom: 10px;
+    padding-left: 10px;
 }
 
 audio {
@@ -38,7 +43,7 @@ audio {
     padding-left: 10px;
 }
 
-.player-box, .cpu-box {
-    margin-bottom: 10px;
-    padding-left: 10px;
+header {
+    margin-left: 10px;
+    margin-right: 10px;
 }
