@@ -21,7 +21,7 @@ let items = {
     thunder: { name: 'Thunder', modifier: 7, description: 'It shocks the target!' }
 }
 
-enemyDefeated = false;
+    enemyDefeated = false;
 modifierActivated = false;
 document.getElementById("message").innerText = `@ You encountered the ${target.name}. `;
 
@@ -100,7 +100,7 @@ function addFlash() {
             modifierActivated = true;
         } else {
             target.items.pop(target.items.flash);
-            document.getElementById("modifier").innerText = `(No modifier active)`;
+            document.getElementById("modifier").innerText = `(No special active)`;
             modifierActivated = false;
         }
         update();
@@ -116,7 +116,7 @@ function addFreeze() {
             modifierActivated = true;
         } else {
             target.items.pop(target.items.freeze);
-            document.getElementById("modifier").innerText = `(No modifier active)`;
+            document.getElementById("modifier").innerText = `(No special active)`;
             modifierActivated = false;
         }
         update();
@@ -132,7 +132,7 @@ function addThunder() {
             modifierActivated = true;
         } else {
             target.items.pop(target.items.thunder);
-            document.getElementById("modifier").innerText = `(No modifier active)`;
+            document.getElementById("modifier").innerText = `(No special active)`;
             modifierActivated = false;
         }
         update();
