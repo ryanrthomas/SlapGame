@@ -2,6 +2,7 @@
     font-family: "Apple Kid";
     src: url("Apple-Kid.ttf");
 }
+
 body {
     margin-top: 10px;
     background-image: linear-gradient(to right, rgb(34, 34, 65), rgb(127, 127, 160), rgb(34, 34, 65));

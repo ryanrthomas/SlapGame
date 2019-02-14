@@ -97,6 +97,7 @@ function addFlash() {
             playFlash();
             target.items.push(items.flash);
             document.getElementById("modifier").innerText = `${items.flash.name} active!`;
+            //document.querySelector("body").style.backgroundColor = "light green";
             modifierActivated = true;
         } else {
             target.items.pop(target.items.flash);
@@ -113,6 +114,7 @@ function addFreeze() {
             playFreeze();
             target.items.push(items.freeze);
             document.getElementById("modifier").innerText = `${items.freeze.name} active!`;
+            //document.querySelector("body").style.backgroundColor = "light blue";
             modifierActivated = true;
         } else {
             target.items.pop(target.items.freeze);
@@ -129,6 +131,7 @@ function addThunder() {
             playThunder();
             target.items.push(items.thunder);
             document.getElementById("modifier").innerText = `${items.thunder.name} active!`;
+            //document.querySelector("body").style.backgroundColor = "yellow";
             modifierActivated = true;
         } else {
             target.items.pop(target.items.thunder);
