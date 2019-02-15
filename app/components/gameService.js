@@ -7,7 +7,11 @@ let _target = new Target("Big Bull", 100, {
     "kick": 10
 }, "assets/bVelzHO.png", false);
 
-let _items = []
+// let _items = new Item {
+//     "flash": 3,
+//     "freeze": 5,
+//     "thunder": 7
+// }
 
 export default class GameService {
     constructor() {
@@ -31,7 +35,6 @@ export default class GameService {
             let damage = 1 //+ addMods();
             _target.health -= damage;
             _target.hits++;
-            
         }
     }
    
