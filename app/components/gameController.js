@@ -14,6 +14,18 @@ function draw() {
     }
 }
 
+function drawMods() {
+    let item = _gs.Item;
+    let template = '';
+    template += item.getTemplate();
+    document.getElementById('item-dropzone').innerHTML = template;
+    document.getElementById("message").innerText = `@ You encountered the ${item.name}.`;
+    document.getElementById("modifier").innerText = `(No special active)`;
+    if (item.health <= 0) {
+        document.getElementById("message").innerText = `@ The ${item.name} became tame! You won!`
+    }
+}
+
 export default class GameController {
     constructor() {
         draw();
@@ -22,7 +34,6 @@ export default class GameController {
     slap() { 
         _gs.slap();
         draw();
-        
     }
     punch() { 
         _gs.punch();
@@ -32,9 +43,17 @@ export default class GameController {
         _gs.kick();
         draw();
     }
-    flash() { 
-        _gs.flash()
-        drawMods()
+    addFlash() { 
+        _gs.addFlash()
+        drawMods();
+    }
+    addFreeze() { 
+        _gs.addFreeze()
+        drawMods();
+    }
+    addThunder() { 
+        _gs.addThunder()
+        drawMods();
     }
     reset() {
         _gs.reset();
@@ -49,7 +68,6 @@ export default class GameController {
         _gs.attackTarget(attackName);
         draw();
     }
-    modifierActivated = false;
     // document.getElementById("message").innerText = `@ You encountered the ${target.name}. `;
 
     addMods() {

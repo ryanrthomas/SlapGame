@@ -1,11 +1,12 @@
 export default class Target {
-    constructor(name, health, attacks, img) {
+    constructor(name, health, attacks, img, modifier) {
         this.name = name;
         this.health = health;
         this.attacks = attacks;
         this.items = [] || "(No special active)";
         this.hits = 0;
-        this.img = img
+        this.img = img;
+        this.modifier = modifier
     }
 
     get IsDead() {
@@ -42,6 +43,30 @@ export default class Target {
             <img src="assets/thunder.png" onclick="app.controllers.gameController.addThunder()">
             <img src="assets/reset.png" onclick="app.controllers.gameController.reset()">
         </div>
+        <div class="col-12 text-white">
+
+			<audio id="slap">
+				<source src="assets/slap.wav" type="audio/wav">
+			</audio>
+			<audio id="punch">
+				<source src="assets/punch.wav" type="audio/wav">
+			</audio>
+			<audio id="kick">
+				<source src="assets/kick.wav" type="audio/wav">
+			</audio>
+			<audio id="flash">
+				<source src="assets/flash.wav" type="audio/wav">
+			</audio>
+			<audio id="freeze">
+				<source src="assets/freeze.wav" type="audio/wav">
+			</audio>
+			<audio id="thunder">
+				<source src="assets/thunder.wav" type="audio/wav">
+			</audio>
+			<audio id="reset">
+				<source src="assets/reset.wav" type="audio/wav">
+			</audio>
+		</div>
         
     </footer>`
     }

@@ -5,7 +5,7 @@ let _target = new Target("Big Bull", 100, {
     "slap": 1,
     "punch": 5,
     "kick": 10
-}, "assets/bVelzHO.png");
+}, "assets/bVelzHO.png", false);
 
 let _items = []
 
@@ -52,15 +52,51 @@ export default class GameService {
         }
     }
 
-    flash() {
+    addFlash() {
         //create flash item
-        _items.push(newItem);
+        if (!_target.modifier) {
+            //_target.items.push(items.flash);
+            document.getElementById("modifier").innerText = `Flash active!`;
+            //document.querySelector("body").style.backgroundColor = "light green";
+            _target.modifier = true;
+        } else {
+            target.items.pop(target.items.flash);
+            document.getElementById("modifier").innerText = `(No special active)`;
+            _target.modifier = false;
+        }
+    }
+    addFreeze() {
+        //create Freeze item
+        if (!_target.modifier) {
+            //_target.items.push(items.freeze);
+            document.getElementById("modifier").innerText = `Freeze active!`;
+            //document.querySelector("body").style.backgroundColor = "light green";
+            _target.modifier = true;
+        } else {
+            target.items.pop(target.items.freeze);
+            document.getElementById("modifier").innerText = `(No special active)`;
+            _target.modifier = false;
+        }
+    }
+    addThunder() {
+        //create Thunder item
+        if (!_target.modifier) {
+            //_target.items.push(items.thunder);
+            document.getElementById("modifier").innerText = `Thunder active!`;
+            //document.querySelector("body").style.backgroundColor = "light green";
+            _target.modifier = true;
+        } else {
+            target.items.pop(target.items.thunder);
+            document.getElementById("modifier").innerText = `(No special active)`;
+            _target.modifier = false;
+        }
     }
 
     reset() {
         _target.health = 100;
         _target.name = "Big Bull";
         _target.hits = 0;
+        _target.modifier = false;
         // _target.items.pop(_target.items.flash);
         // _target.items.pop(_target.items.freeze);
         // _target.items.pop(_target.items.thunder);
