@@ -13,34 +13,35 @@
 	<title>EarthBound-Inspired Slap Game</title>
 </head>
 
-<body class="container">
-	<header class="row">
+<body>
+	<div class="container" id="target-dropzone"></div>
+	<!-- <header class="row" id="stats">
 		<div class="target-box col-12 text-white">
 			<span class="title">Name: <span class="title" id="name">--</span></span><br>
 			<span>HP: <span id="health">--</span></span><br>
 			<span>Hits: <span id="hits">--</span></span><br>
 			<span><span id="modifier">(No special active)</span></span>
-		</div>
-	</header>
+		</div> 
+</header>
 	<div class="row">
 		<div class="col-12">
 			<img src="assets/bVelzHO.png">
 		</div>
-	</div>
-	<footer class="row">
+	</div> -->
+	<!-- <footer class="row">
 		<div class="col-12">
 			<nav>
 				<span id="message"></span><br>
 			</nav>
-			<img src="assets/slap.png" onclick="slap()">
-			<img src="assets/punch.png" onclick="punch()">
-			<img src="assets/kick.png" onclick="kick()">
+			<img src="assets/slap.png" onclick="app.controllers.gameController.slap(${this.attacks.slap})">
+			<img src="assets/punch.png" onclick="app.controllers.gameController.punch()">
+			<img src="assets/kick.png" onclick="app.controllers.gameController.kick()">
 		</div>
 		<div class="col-12">
-			<img src="assets/flash.png" onclick="addFlash()">
-			<img src="assets/freeze.png" onclick="addFreeze()">
-			<img src="assets/thunder.png" onclick="addThunder()">
-			<img src="assets/reset.png" onclick="reset()">
+			<img src="assets/flash.png" onclick="app.controllers.gameController.addFlash()">
+			<img src="assets/freeze.png" onclick="app.controllers.gameController.addFreeze()">
+			<img src="assets/thunder.png" onclick="app.controllers.gameController.addThunder()">
+			<img src="assets/reset.png" onclick="app.controllers.gameController.reset()">
 		</div>
 		<div class="col-12 text-white">
 			<audio autoplay controls loop>
@@ -68,12 +69,9 @@
 				<source src="assets/reset.wav" type="audio/wav">
 			</audio>
 		</div>
-	</footer>
+	</footer> -->
 
-	<script src="game.js"></script>
+	<script type="module" src="app/main.js"></script>
 </body>
 
 </html>
-
-
-

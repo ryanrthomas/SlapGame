@@ -1,13 +1,6 @@
 console.log("Start");
 
 // Target object
-let player = {
-    name: "Player",
-    health: 25,
-    hits: 0,
-    items: []
-}
-
 let target = {
     name: "Big Bull",
     health: 100,
@@ -21,7 +14,7 @@ let items = {
     thunder: { name: 'Thunder', modifier: 7, description: 'It shocks the target!' }
 }
 
-    enemyDefeated = false;
+enemyDefeated = false;
 modifierActivated = false;
 document.getElementById("message").innerText = `@ You encountered the ${target.name}. `;
 
