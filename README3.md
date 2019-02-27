@@ -122,7 +122,7 @@ function draw() {
   //of an element on the DOM
 }
 
-//any other private functions you may want
+// Any other private functions you may want
 
 export default class GameController {
   constructor() { }

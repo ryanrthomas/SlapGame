@@ -5,7 +5,9 @@
 
 body {
     margin-top: 10px;
-    background-image: linear-gradient(to right, rgb(34, 34, 65), rgb(127, 127, 160), rgb(34, 34, 65));
+    background-image: url("https://thumbs.gfycat.com/HospitableFlusteredBittern-size_restricted.gif");
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 
 img {
